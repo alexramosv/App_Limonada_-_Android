@@ -70,6 +70,7 @@ class MainActivity : AppCompatActivity() {
 
             // MODIFICACIONES - Añadir el clickLemonImage
 
+            // Sirve para poder hacer click en la imagen
             clickLemonImage()
         }
         lemonImage!!.setOnLongClickListener {
@@ -118,6 +119,8 @@ class MainActivity : AppCompatActivity() {
 
         // MODIFICACIONES - EL WHEN
 
+        // Se definen los estados para cada valor que va a ir tomando ese 'contador' con el que va a ir cambiando de imagen
+
         when(lemonadeState){
             SELECT-> {lemonadeState=SQUEEZE; lemonSize=lemonTree.pick();if (squeezeCount==-1){squeezeCount++}}
             SQUEEZE->{if(lemonSize>0){lemonSize--;squeezeCount++;};if(lemonSize==0){lemonadeState=DRINK;lemonSize--}}
@@ -142,6 +145,8 @@ class MainActivity : AppCompatActivity() {
         //  but remember that they are drawables, not strings.
 
         // MODIFICACIONES - EL WHEN
+
+        // Se habilitan las imágenes para esos valores que iba tomando en el WHEN anterior. De esta forma se pueden ver las diferentes imágenes
 
         when(lemonadeState){
 
